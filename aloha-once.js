@@ -69,11 +69,15 @@ class AlohaOnce extends HTMLElement {
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
         :host {
-          display: block; /* Ensure it behaves as a block element */
-          width: 100%; /* Full width of parent */
-          height: 100%; /* Full height of parent */
-          margin: 0; /* Remove any default margins */
-          padding: 0; /* Remove any default padding */
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          position: absolute; /* Ensure it fills the parent */
+          top: 0;
+          left: 0;
+          overflow: hidden; /* Prevent overflow issues */
         }
 
         .container {
@@ -99,6 +103,8 @@ class AlohaOnce extends HTMLElement {
           opacity: 0;
           margin: 0;
           padding: 0;
+          width: 100%; /* Ensure text spans full width */
+          text-align: ${textAlignment};
           transition: filter 3s ease-out, letter-spacing 3s ease-out, opacity 2s ease-out 1s;
         }
 
